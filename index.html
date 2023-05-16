@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <style>
+        .c-item {
+  height: 540px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+        .container {
+          display: flex;
+          height: 100vh; /* Adjust as needed */
+        }
+        
+        .left,
+        .right {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          /* Add the padding */
+        }
+        
+        .left {
+          background-color: white; /* Adjust as needed */
+          margin-left: 170px;
+        }
+        
+        .right {
+          background-color: transparent; /* Change to transparent */
+          margin-right: 200px;
+        }
+        
+        .centered-content {
+          text-align: center;
+          position: relative;
+          width: 100%;
+          overflow: hidden; /* Prevent content from overflowing */
+        }
+        
+        .input-box {
+          width: 330px;
+          box-sizing: border-box;
+        }
+        
+        .input-box header {
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 45px;
+        }
+        
+        .input-field {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          padding: 0 10px 0 10px;
+        }
+        
+        .input {
+          height: 45px;
+          width: 100%;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          outline: none;
+          margin-bottom: 20px;
+          color: #40414a;
+        }
+        
+        .input-box .input-field label {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          pointer-events: none;
+          transition: 0.5s;
+        }
+        
+        .input-field .input:focus ~ label {
+          top: -10px;
+          font-size: 13px;
+        }
+        
+        .input-field .input:valid ~ label {
+          top: -10px;
+          font-size: 13px;
+          color: #5d5076;
+        }
+        
+        .input-field .input:focus,
+        .input-field .input:valid {
+          border-bottom: 1px solid #743ae1;
+        }
+        
+        .input-field {
+          position: relative;
+        }
+        
+        .forgot-password {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          color: black;
+          font-size: 12px;
+        }
+        
+        .remember-me {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: black;
+          font-size: 9px;
+        }
+        
+        .right {
+    margin-right: 140px;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Prevent content from overflowing */
+    position: relative; /* Add position relative */
+}
+
+.slider-box {
+    width: 100%; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+#slider {
+    width: 400%; /* Adjust width as needed */
+    display: inline-flex;
+    transition: 0.7s;
+    position: absolute; /* Position absolute for slider */
+}
+
+
+
+.indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+.indicators span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.active {
+    background: #ffff !important;
+}
+.welcome-back {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .welcome-text {
+            font-size: 14px;
+            color: black;
+        }
+        .untitled-ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: dark black;
+            padding: 100px;
+            font-size: 13px;
+        }
+        .login-with-google-btn {
+    transition: background-color .3s, box-shadow .3s;
+      
+    padding: 12px 16px 12px 42px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+    
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 12px 11px;
+    
+    &:hover {
+      box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+    }
+    
+    &:active {
+      background-color: #eeeeee;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 
+        0 -1px 0 rgba(0, 0, 0, .04),
+        0 2px 4px rgba(0, 0, 0, .25),
+        0 0 0 3px #c8dafc;
+    }
+    
+    &:disabled {
+      filter: grayscale(100%);
+      background-color: #ebebeb;
+      box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+      cursor: not-allowed;
+    }
+  }
+  .or-view {
+            text-align: center;
+            margin-top: 20px;
+            color: gray;
+            font-size: 14px;
+        }
+        .login-google {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-with-google-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 100px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .signin{
+    text-align: center;
+    font-size: small;
+    margin-top: 25px;
+}
+.submit{
+    border: none;
+    outline: none;
+    height: 45px;
+    background: #ececec;
+    border-radius: 5px;
+    transition: .4s;
+        background-color: black;
+        color: white;
+}
+.submit:hover{
+    background: rgba(37, 95, 156,0.9);
+    color: #fff;
+}
+
+.text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .text p {
+        margin-top: 0;
+    }
+    @media (max-width: 767px) {
+  /* CSS rules to remove the images */
+  .c-img {
+    display: none;
+  }
+  @media screen and (max-width:600px)
+
+{
+ .left{
+   margin-left: 0px;
+   margin-right: 0px;
+ }
+ .left,
+   .right {
+     margin-top: 30px;
+     margin-bottom: 30px;
+     /* Add the padding */
+   }
+   .login-with-google-btn {
+            padding: 10px 100px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+   
+}
+}
+
+
+
+
+
+
+
+
+</style>
+
+      
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="input-box">
+                <div class="welcome-back">
+                    <h2>Welcome Back, Olivia</h2>
+                    <h6 class="welcome-text">Welcome back! Please enter your details.</h6>
+                </div>
+                <button type="button" class="login-with-google-btn">
+                    Log in with Google
+                </button>
+                <p class="or-view">or</p>
+                <div class="input-field">
+                    <input type="text" class="input" id="email" required autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" id="password" required>
+                    <label for="password">Password</label>
+                    <div class="remember-me">
+                     &nbsp;<input type="checkbox" id="remember" name="remember">
+                        <a>Remember me for 30 days</a>
+                    </div>
+                    <div class="forgot-password">
+                        <a>Forgot Password? &nbsp; </a>
+                    </div>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Log in">
+                </div>
+                <div class="signin">
+                    <span>Don't have an account? Sign up for free</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            
+                <div class="carousel-inner">
+                  <div class="carousel-item active c-item">
+                    <img src="image1.jpg" class="d-block w-100 c-img" alt="Slide 1">
+                    <div class="carousel-caption top-0 mt-4">
+                      <p><br><br><br><br><br><br><br><br><br><br><br>
+                        We move 10x faster than our peers and stay consistent. while they are bogged down with design debt, we're releasing new feautures.We are trying to build more convencing feautures <br><br> Sophie Hall </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item c-item">
+                    <img src="image2.jpg" class="d-block w-100 c-img" alt="Slide 2">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p><br><br><br><br><br><br><br><br><br><br><br>
+                            We move 10x faster than our peers and stay consistent. while they are bogged down with design debt, we're releasing new feautures.We are trying to build more convencing feautures <br><br> Sophie Hall </p>
+                      </div>
+                  </div>
+                  <div class="carousel-item c-item">
+                    <img src="image3.jpg" class="d-block w-100 c-img" alt="Slide 3">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p><br><br><br><br><br><br><br><br><br><br><br>
+                            We move 10x faster than our peers and stay consistent. while they are bogged down with design debt, we're releasing new feautures.We are trying to build more convencing feautures <br><br> Sophie Hall </p>
+                      </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+      
+</body>
+</html>
